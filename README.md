@@ -1,4 +1,5 @@
 <div align="center">
+
 # nonebot-plugin-word-censor
 
 _✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
