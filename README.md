@@ -1,6 +1,6 @@
 # nonebot-plugin-word-censor
 
-_✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
+✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨
 
 <a href="./LICENSE">
     <img src="https://img.shields.io/github/license/你的GitHub用户名/nonebot-plugin-word-censor.svg" alt="license">
