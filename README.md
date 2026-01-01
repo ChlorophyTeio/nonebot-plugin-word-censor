@@ -33,7 +33,9 @@ _✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
 在 NoneBot2 项目的 `.env` 文件中添加以下配置（可选）：
 
 ```dev
-SUPERUSERS = ["2428451170"]  # 管理员
+SUPERUSERS = ["2428451170"]    # 管理员
+SEND_WORD_BLACKLIST_FILE = "./data/send_word_blacklist.json"    # 词汇黑名单文件存放位置
+SEND_WORD_PRIORITY = 100    # 优先级，没啥用
 ```
 
 | 配置项 | 类型 | 默认值 | 说明 |
