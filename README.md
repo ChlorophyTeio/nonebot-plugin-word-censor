@@ -1,10 +1,3 @@
-<div align="center">
-  <a href="https://v2.nonebot.dev/store"><img src="https://nonebot.dev/logo.png" width="180" height="180" alt="NoneBotPluginLogo"></a>
-  <br>
-</div>
-
-<div align="center">
-
 # nonebot-plugin-word-censor
 
 _✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
