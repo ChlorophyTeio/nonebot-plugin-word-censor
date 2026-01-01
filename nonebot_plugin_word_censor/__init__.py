@@ -23,7 +23,7 @@ __plugin_meta__ = PluginMetadata(
     description="拦截包含黑名单词汇或匹配正则表达式的机器人发送消息",
     usage="指令：add/del/list/refresh/help (支持 regex)",
     type="application",
-    homepage="",
+    homepage="https://github.com/ChlorophyTeio/nonebot-plugin-word-censor",
     config=Config,
     extra={"priority": plugin_config.send_word_priority},
 )
