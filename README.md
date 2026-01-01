@@ -1,6 +1,6 @@
 # nonebot-plugin-word-censor
 
-✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨
+_✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
 
 <a href="./LICENSE">
     <img src="https://img.shields.io/github/license/你的GitHub用户名/nonebot-plugin-word-censor.svg" alt="license">
@@ -8,9 +8,7 @@
 <a href="https://pypi.python.org/pypi/nonebot-plugin-word-censor">
     <img src="https://img.shields.io/pypi/v/nonebot-plugin-word-censor.svg" alt="pypi">
 </a>
-<a href="https://www.python.org/">
-    <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
-</a>
+<img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
 
 ## 📖 介绍
 
@@ -18,10 +16,16 @@
 
 它可以防止机器人因为意外触发某些关键词或匹配到特定正则表达式而发送不当消息。支持通过指令实时动态管理黑名单，并具备自动通知管理员（Superuser）的功能。
 
+**核心特性：**
+* 🛡️ **双重拦截**：同时支持“关键词”与“正则表达式”过滤。
+* ⚡ **动态管理**：无需重启，通过指令即刻添加/删除规则。
+* 🔔 **实时告警**：拦截生效时，自动私聊通知超级用户并告知拦截原因。
+* 🔒 **安全脱敏**：查看列表时自动隐藏敏感词关键部分。
+
 ## 💿 安装
 
 <details open>
-<summary>使用 nb-cli 安装</summary>
+<summary>使用 nb-cli 安装（推荐）</summary>
 <pre><code>nb plugin install nonebot-plugin-word-censor</code></pre>
 </details>
 
@@ -47,8 +51,8 @@
 
 | 指令 | 格式 | 说明 |
 |:-----|:-----|:-----|
-| 添加词汇 | `word blacklist add <内容>` | 将指定内容加入黑名单 |
-| 删除词汇 | `word blacklist del <内容>` | 将指定内容移出黑名单 |
+| **添加词汇** | `word blacklist add <内容>` | 将指定内容加入黑名单 |
+| **删除词汇** | `word blacklist del <内容>` | 将指定内容移出黑名单 |
 
 ### 2. 高级指令 (正则表达式)
 
@@ -56,17 +60,19 @@
 
 | 指令 | 格式 | 示例 |
 |:-----|:-----|:-----|
-| 添加正则 | `word blacklist add regex <表达式>` | `word blacklist add regex \d{11}` (拦截手机号) |
-| 删除正则 | `word blacklist del regex <表达式>` | `word blacklist del regex \d{11}` |
+| **添加正则** | `word blacklist add regex <表达式>` | `... add regex \d{11}` (拦截手机号) |
+| **删除正则** | `word blacklist del regex <表达式>` | `... del regex \d{11}` |
 
 ### 3. 其他指令
 
-- **查看列表**：`word blacklist list`
-  - 查看当前生效的所有规则（普通词汇会脱敏显示）。
-- **刷新配置**：`word blacklist refresh`
-  - 如果你手动修改了 JSON 文件，可使用此指令热重载。
-- **帮助**：`word blacklist help`
+* **查看列表**：`word blacklist list`
+    * 查看当前生效的所有规则（普通词汇会脱敏显示）。
+* **刷新配置**：`word blacklist refresh`
+    * 如果你手动修改了 JSON 文件，可使用此指令热重载。
+* **帮助**：`word blacklist help`
 
-***
+---
 
-本项目使用 [MIT](./LICENSE) 许可证开源。
+<div align="center">
+  <p>本项目使用 <a href="./LICENSE">MIT 许可证</a> 开源</p>
+</div>
