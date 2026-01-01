@@ -1,3 +1,4 @@
+<div align="center">
 # nonebot-plugin-word-censor
 
 _✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
@@ -9,6 +10,8 @@ _✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
     <img src="https://img.shields.io/pypi/v/nonebot-plugin-word-censor.svg" alt="pypi">
 </a>
 <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
+
+</div>
 
 ## 📖 介绍
 
