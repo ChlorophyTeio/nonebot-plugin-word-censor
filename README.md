@@ -8,7 +8,9 @@
 <a href="https://pypi.python.org/pypi/nonebot-plugin-word-censor">
     <img src="https://img.shields.io/pypi/v/nonebot-plugin-word-censor.svg" alt="pypi">
 </a>
-<img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
+<a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/python-3.8+-blue.svg" alt="python">
+</a>
 
 ## 📖 介绍
 
