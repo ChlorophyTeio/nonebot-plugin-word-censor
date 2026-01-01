@@ -38,11 +38,6 @@ SEND_WORD_BLACKLIST_FILE = "./data/send_word_blacklist.json"    # 词汇黑名�
 SEND_WORD_PRIORITY = 100    # 优先级，没啥用
 ```
 
-| 配置项 | 类型 | 默认值 | 说明 |
-|:-----|:----|:----|:----|
-| `send_word_blacklist_file` | string | `./src/send_word_blacklist.json` | 黑名单数据存储路径 (JSON) |
-| `send_word_priority` | int | `100` | 插件响应优先级 |
-
 ## 🎮 使用方法
 
 **⚠️ 注意**：以下指令仅 **SUPERUSER** (超级用户) 可用。
