@@ -1,11 +1,17 @@
+<!-- markdownlint-disable MD033 MD036 MD041 -->
+
+<p align="center">
+  <a href="https://v2.nonebot.dev/"><img src="https://v2.nonebot.dev/logo.png" width="200" height="200" alt="nonebot"></a>
+</p>
+
 <div align="center">
 
 # nonebot-plugin-word-censor
 
 _✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
 
-<a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/你的GitHub用户名/nonebot-plugin-word-censor.svg" alt="license">
+<a href="https://raw.githubusercontent.com/he0119/nonebot-plugin-treehelp/main/LICENSE">
+    <img src="https://img.shields.io/github/license/he0119/nonebot-plugin-treehelp.svg" alt="license">
 </a>
 <a href="https://pypi.python.org/pypi/nonebot-plugin-word-censor">
     <img src="https://img.shields.io/pypi/v/nonebot-plugin-word-censor.svg" alt="pypi">
