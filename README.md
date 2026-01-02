@@ -10,7 +10,7 @@
 
 _✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
 
-<a href="https://raw.githubusercontent.com/he0119/nonebot-plugin-treehelp/main/LICENSE">
+<a href="https://raw.githubusercontent.com/ChlorophyTeio/nonebot-plugin-word-censor/refs/heads/main/LICENSE">
     <img src="https://img.shields.io/github/license/he0119/nonebot-plugin-treehelp.svg" alt="license">
 </a>
 <a href="https://pypi.python.org/pypi/nonebot-plugin-word-censor">
