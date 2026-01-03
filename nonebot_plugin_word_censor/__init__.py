@@ -17,7 +17,6 @@ from nonebot.plugin import PluginMetadata
 
 from .config import Config, plugin_config
 
-# --- 插件元数据 ---
 __plugin_meta__ = PluginMetadata(
     name="词汇黑名单审查",
     description="拦截包含黑名单词汇或匹配正则表达式的机器人发送消息",
@@ -30,14 +29,10 @@ __plugin_meta__ = PluginMetadata(
 
 _driver = get_driver()
 
-# 全局变量：存储黑名单数据
-# 注意：在多进程模式下，全局变量不会共享，这里假设是单进程运行
 _BLACKLIST_WORDS: list[str] = []
 _BLACKLIST_REGEX_STRS: list[str] = []
 _COMPILED_REGEX: list[re.Pattern] = []
 
-
-# ================= 工具函数 =================
 
 def _get_file_path() -> Path:
     """获取黑名单文件的绝对路径。
@@ -145,8 +140,7 @@ async def _init_plugin() -> None:
     _load_blacklist()
 
 
-# ================= 指令响应逻辑 =================
-
+# 指令
 wb_add = on_command("word blacklist add", permission=SUPERUSER, priority=5, block=True)
 
 
@@ -286,8 +280,7 @@ async def _handle_help() -> None:
     )
 
 
-# ================= API 拦截逻辑 =================
-
+# API
 async def _notify_admin(bot: Bot, data: dict, reason: str) -> None:
     """向超级用户发送拦截通知。
 
