@@ -17,10 +17,11 @@ from nonebot.plugin import PluginMetadata
 
 from .config import Config, plugin_config
 
+# --- 插件元数据 ---
 __plugin_meta__ = PluginMetadata(
     name="词汇黑名单审查",
     description="拦截包含黑名单词汇或匹配正则表达式的机器人发送消息",
-    usage="指令：add/del/list/refresh/help (支持 regex)",
+    usage="指令：word blacklist add/del/list/refresh/help (支持 regex)",
     type="application",
     homepage="https://github.com/ChlorophyTeio/nonebot-plugin-word-censor",
     config=Config,
@@ -34,6 +35,7 @@ _BLACKLIST_REGEX_STRS: list[str] = []
 _COMPILED_REGEX: list[re.Pattern] = []
 
 
+# 工具函数
 def _get_file_path() -> Path:
     """获取黑名单文件的绝对路径。
 
@@ -281,33 +283,6 @@ async def _handle_help() -> None:
 
 
 # API
-async def _notify_admin(bot: Bot, data: dict, reason: str) -> None:
-    """向超级用户发送拦截通知。
-
-    Args:
-        bot: NoneBot Bot 实例。
-        data: 原始 API 数据字典。
-        reason: 拦截的具体原因。
-    """
-    try:
-        # 获取目标 ID (可能是群号或用户号)
-        target_id = data.get("group_id") or data.get("user_id")
-
-        superusers = _driver.config.superusers
-        for su in superusers:
-            # 防止死循环：如果被拦截的消息本身就是发给管理员的，则不发送通知
-            if target_id and str(target_id) == str(su):
-                continue
-
-            await bot.send_private_msg(
-                user_id=int(su),
-                message=f"⚠️ 拦截警报\n目标: {target_id}\n原因: {reason}",
-            )
-    except Exception as e:  # noqa: BLE001
-        # 通知失败不应影响主逻辑，仅记录日志
-        logger.warning(f"通知发送失败: {e}")
-
-
 async def _check_black_list(bot: Bot, api: str, data: dict) -> None:
     """API 调用钩子函数。
 
@@ -331,13 +306,11 @@ async def _check_black_list(bot: Bot, api: str, data: dict) -> None:
     # 1. 检查普通词汇 (性能较高，优先检查)
     for word in _BLACKLIST_WORDS:
         if word in raw_message:
-            await _notify_admin(bot, data, f"普通词汇匹配: {word}")
             raise MockApiException(result={"message": "Blocked by word blacklist"})
 
     # 2. 检查正则 (性能相对较低)
     for pattern in _COMPILED_REGEX:
         if pattern.search(raw_message):
-            await _notify_admin(bot, data, f"正则规则匹配: {pattern.pattern}")
             raise MockApiException(result={"message": "Blocked by regex blacklist"})
 
 
