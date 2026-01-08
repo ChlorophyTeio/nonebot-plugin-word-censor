@@ -44,7 +44,6 @@ _✨ 基于 NoneBot2 的词汇与正则消息审查拦截插件 ✨_
 
 ```dev
 SUPERUSERS = ["2428451170"]    # 管理员
-SEND_WORD_BLACKLIST_FILE = "./data/send_word_blacklist.json"    # 词汇黑名单文件存放位置
 SEND_WORD_PRIORITY = 100    # 优先级，没啥用
 ```
 
