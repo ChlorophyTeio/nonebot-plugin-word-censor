@@ -14,6 +14,7 @@ from nonebot.exception import MockApiException
 from nonebot.params import CommandArg
 from nonebot.permission import SUPERUSER
 from nonebot.plugin import PluginMetadata
+from nonebot_plugin_localstore import get_plugin_data_file
 
 from .config import Config, plugin_config
 
@@ -42,7 +43,7 @@ def _get_file_path() -> Path:
     Returns:
         解析后的 Path 对象。
     """
-    return plugin_config.send_word_blacklist_file.resolve()
+    return get_plugin_data_file("send_word_blacklist.json")
 
 
 def _compile_regex_list() -> None:
