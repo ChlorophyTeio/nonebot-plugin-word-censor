@@ -8,12 +8,15 @@ import json
 import re
 from pathlib import Path
 
-from nonebot import get_driver, logger, on_command
+from nonebot import get_driver, logger, on_command, require
 from nonebot.adapters import Bot, Message
 from nonebot.exception import MockApiException
 from nonebot.params import CommandArg
 from nonebot.permission import SUPERUSER
 from nonebot.plugin import PluginMetadata
+
+require("nonebot_plugin_localstore")
+
 from nonebot_plugin_localstore import get_plugin_data_file
 
 from .config import Config, plugin_config
