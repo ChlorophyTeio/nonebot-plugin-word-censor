@@ -99,7 +99,6 @@ def _load_blacklist() -> None:
 
             logger.info(
                 f"黑名单加载完毕: 普通词汇 {len(_BLACKLIST_WORDS)} 个, "
-                f"正则规则 {len(_COMPILED_REGEX)} 个"
             )
     except (json.JSONDecodeError, OSError) as e:
         logger.error(f"加载黑名单文件失败: {e}")
@@ -264,7 +263,6 @@ async def _handle_refresh() -> None:
     """处理手动刷新指令。"""
     _load_blacklist()
     await wb_refresh.finish(
-        f"✅ 刷新成功\n普通词: {len(_BLACKLIST_WORDS)}\n正则: {len(_COMPILED_REGEX)}"
     )
 
 

@@ -53,8 +53,7 @@ SEND_WORD_PRIORITY = 100    # 优先级，没啥用
 
 ### 1. 基础指令 (普通词汇)
 
-| 指令 | 格式 | 说明 |
-|:-----|:-----|:-----|
+| 指令         | 格式                        | 说明                 |
 | **添加词汇** | `word blacklist add <内容>` | 将指定内容加入黑名单 |
 | **删除词汇** | `word blacklist del <内容>` | 将指定内容移出黑名单 |
 
@@ -62,17 +61,16 @@ SEND_WORD_PRIORITY = 100    # 优先级，没啥用
 
 支持 Python `re` 模块的语法。
 
-| 指令 | 格式 | 示例 |
-|:-----|:-----|:-----|
+| 指令         | 格式                                | 示例                                |
 | **添加正则** | `word blacklist add regex <表达式>` | `... add regex \d{11}` (拦截手机号) |
-| **删除正则** | `word blacklist del regex <表达式>` | `... del regex \d{11}` |
+| **删除正则** | `word blacklist del regex <表达式>` | `... del regex \d{11}`              |
 
 ### 3. 其他指令
 
 * **查看列表**：`word blacklist list`
-    * 查看当前生效的所有规则（普通词汇会脱敏显示）。
+  * 查看当前生效的所有规则（普通词汇会脱敏显示）。
 * **刷新配置**：`word blacklist refresh`
-    * 如果你手动修改了 JSON 文件，可使用此指令热重载。
+  * 如果你手动修改了 JSON 文件，可使用此指令热重载。
 * **帮助**：`word blacklist help`
 
 ---
