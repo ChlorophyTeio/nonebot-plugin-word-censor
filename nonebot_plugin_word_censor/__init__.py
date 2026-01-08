@@ -98,7 +98,9 @@ def _load_blacklist() -> None:
             _compile_regex_list()
 
             logger.info(
-                f"黑名单加载完毕: 普通词汇 {len(_BLACKLIST_WORDS)} 个, "
+                f"黑名单加载完毕: {file_path}\n"
+                f"普通词汇 {len(_BLACKLIST_WORDS)} 个, "
+                f"正则规则 {len(_COMPILED_REGEX)} 个"
             )
     except (json.JSONDecodeError, OSError) as e:
         logger.error(f"加载黑名单文件失败: {e}")
@@ -235,7 +237,7 @@ wb_list = on_command("word blacklist list", permission=SUPERUSER, priority=5, bl
 @wb_list.handle()
 async def _handle_list() -> None:
     """处理查看黑名单列表指令。"""
-    msg_lines = ["📋 当前黑名单配置:"]
+    msg_lines = ["📋 当前黑名单配置:", f"📂 文件路径: {_get_file_path()}"]
 
     if _BLACKLIST_WORDS:
         masked_words = [_mask_word(w) for w in _BLACKLIST_WORDS]
@@ -263,6 +265,7 @@ async def _handle_refresh() -> None:
     """处理手动刷新指令。"""
     _load_blacklist()
     await wb_refresh.finish(
+        f"✅ 刷新成功\n普通词: {len(_BLACKLIST_WORDS)}\n正则: {len(_COMPILED_REGEX)}"
     )
 
 
