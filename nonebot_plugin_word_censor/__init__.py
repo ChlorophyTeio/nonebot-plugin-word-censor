@@ -311,12 +311,12 @@ async def _check_black_list(bot: Bot, api: str, data: dict) -> None:
     # 1. 检查普通词汇 (性能较高，优先检查)
     for word in _BLACKLIST_WORDS:
         if word in raw_message:
-            raise MockApiException(result={"message": "Blocked by word blacklist"})
+            raise MockApiException(result={"message_id": -1, "message": "Blocked by word blacklist"})
 
     # 2. 检查正则 (性能相对较低)
     for pattern in _COMPILED_REGEX:
         if pattern.search(raw_message):
-            raise MockApiException(result={"message": "Blocked by regex blacklist"})
+            raise MockApiException(result={"message_id": -1, "message": "Blocked by regex blacklist"})
 
 
 # 注册全局 API 钩子

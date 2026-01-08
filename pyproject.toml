@@ -1,6 +1,8 @@
 [tool.poetry]
 name = "nonebot-plugin-word-censor"
+version = "0.3.1"
 description = "一个用于拦截 Bot 发送包含敏感词或正则匹配内容的消息审查插件"
+authors = ["ChlorophyTeio <chlorophyimo@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/ChlorophyTeio/nonebot-plugin-word-censor"
