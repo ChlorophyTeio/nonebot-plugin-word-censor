@@ -13,11 +13,9 @@ class Config(BaseModel):
     """插件配置模型。
 
     Attributes:
-        send_word_blacklist_file: 黑名单存储文件的路径 (JSON 格式)。
         send_word_priority: 插件的事件响应优先级。
     """
 
-    send_word_blacklist_file: Path = Path("./src/send_word_blacklist.json")
     send_word_priority: int = 100
 
 
